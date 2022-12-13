@@ -43,6 +43,14 @@ return require('packer').startup(function(use)
 
   -- Rust specific:
   use 'simrat39/rust-tools.nvim'
+  use {
+      'saecki/crates.nvim',
+      tag = 'v0.3.0',
+      requires = { 'nvim-lua/plenary.nvim' },
+      config = function()
+          require('crates').setup()
+      end,
+  }
 
   -- Themes:
   use 'nyoom-engineering/oxocarbon.nvim'
